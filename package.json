@@ -1,0 +1,27 @@
+{
+  "name": "createelementjs",
+  "version": "1.0.0",
+  "description": "Create DOM elements using document.createElement instead of innerHTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeroentvb/CreateElementJs.git"
+  },
+  "keywords": [
+    "DOM",
+    "createElement"
+  ],
+  "author": "jeroentvb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeroentvb/CreateElementJs/issues"
+  },
+  "homepage": "https://github.com/jeroentvb/CreateElementJs#readme",
+  "devDependencies": {
+    "standard": "^14.3.1"
+  }
+}
