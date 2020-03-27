@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run lint",
-    "lint": "standard"
+    "lint": "standard",
+    "watch": "tsc -w",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   },
   "homepage": "https://github.com/jeroentvb/CreateElementJs#readme",
   "devDependencies": {
-    "standard": "^14.3.1"
+    "standard": "^14.3.3",
+    "typescript": "^3.8.3"
   }
 }
