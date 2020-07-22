@@ -1,6 +1,55 @@
 import { ElementConfig } from './types/config.model'
 
-import { addCss } from './helper'
+import { addCss } from './helper.js'
+
+import { types } from './types/index'
+
+export class DomElement {
+  type: types
+  class: string | string[]
+  id: string
+  src: string
+  alt: string
+  text: string
+  element: HTMLElement
+
+  constructor (type: types) {
+    this.type = type
+    this.class = ''
+    this.id = ''
+    this.src = ''
+    this.alt = ''
+    this.text = ''
+    this.element = document.createElement('span')
+  }
+
+  addId (id: string) {
+    this.id = id
+    return this
+  }
+
+  addClass (cssClass: string | string[]) {
+    this.class = cssClass
+    return this
+  }
+
+  addText (text: string) {
+    this.text = text
+    return this
+  }
+
+  create () {
+    const text = document.createTextNode(this.text)
+    const el = document.createElement(this.type)
+    el.appendChild(text)
+
+    this.element = el
+  }
+
+  static append (parent: DomElement, child: DomElement) {
+    parent.element.appendChild(child.element)
+  }
+}
 
 function create (name: string, cssClass: string | string[]) {
   const el = document.createElement(name)
@@ -62,11 +111,11 @@ function image (src: string, alt: string, config: ElementConfig) {
 // }
 
 // eslint-disable-next-line no-unused-vars
-const element = {
-  create,
-  image,
-  // textNode,
-  // update,
-  // removeChildren,
-  // appendChildren
-}
+// const element = {
+//   create,
+//   image,
+//   // textNode,
+//   // update,
+//   // removeChildren,
+//   // appendChildren
+// }

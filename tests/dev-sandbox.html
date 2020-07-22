@@ -9,12 +9,21 @@
 <body>
   <main id="main"></main>
   
-  <script src="../dist/index.js" type="module"></script>
-  <script>
+  <script src="../dist/element.js" type="module"></script>
+  <script type="module">
+    import { DomElement } from '../dist/element.js'
+
+    const main = document.getElementById('main')
     // const img = element.img('test', 'this is a test')
 
-    console.log(element)
-  
+    const p = new DomElement('p')
+    p
+      .addClass('test')
+      .addText('This is a p')
+      .create()
+
+    console.log(p)
+    main.appendChild(p.element)
   </script>
 </body>
 </html>
